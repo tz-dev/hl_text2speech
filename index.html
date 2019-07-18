@@ -24,9 +24,9 @@
             text      = text.replace(",", " _pause ");
             text      = text.replace(", ", " _pause ");
             text      = text.replace(";", " _pause ");
-            text      = text.replace("  ", " ");
-            text      = text.replace("  ", " ");
             text      = text.replace(/(\r\n|\n|\r)/gm, " _pause ");
+            text      = text.replace("  ", " ");
+            text      = text.replace("  ", " ");
         var volume    = document.getElementById("volume").value / 100;
         var words     = text.split(' ');
         var counter   = -1;
@@ -89,7 +89,7 @@
     <section id="main">
       <img src="img/half_life.png" class="center" id="logo" alt="logo" />
       <h1>TEXT TO SPEECH</h1>
-      <textarea id="input" cols="80" rows="10" autofocus>vox_login</textarea>
+      <textarea id="input" cols="80" rows="10" autofocus></textarea>
       <button id="play" type="button" onclick="text2speech()">Speak</button>
       <input type="range" min="1" max="100" value="50" class="slider" id="volume">
       <button id="clear" type="button" onclick="document.getElementById('input').value = ''; document.location.reload(true)">Clear</button>
