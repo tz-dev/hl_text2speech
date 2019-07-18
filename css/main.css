@@ -1,0 +1,154 @@
+html {
+  color: #E47A24;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: arial;
+  background: url(../img/gordon.png);
+}
+
+section#main {
+  background: #3B352C;
+  width: 50%;
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  padding: 10px;
+  border: 3px solid #9B321F;
+}
+
+#logo {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+textarea {
+  float: left;
+  margin-right: 10px;
+  width: 700px;
+  color: #E47A24;
+}
+
+label#volume {
+  float: right;
+}
+
+h1 {
+  text-align: center;
+  color: #E47A24;
+  width: 99.5%;
+  border: 3px solid #9B321F;
+  background: #403F2D;
+}
+
+h3 {
+  color: #9B321F;
+}
+
+.slider {
+  float: right;
+  width: 200px;
+}
+
+.ui-helper-hidden-accessible {display: none;}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#dictionary {
+  float: left;
+  height: 175px;
+  overflow-x: scroll;
+  overflow-x: hidden;
+  background: #fff;
+  color: #E47A24;
+  border: 3px solid #E47A24;
+  padding: 5px;
+}
+
+fieldset, legend {
+  border: 3px solid #9B321F;
+  padding: 10px;
+  background: #403F2D;
+}
+
+legend{
+  font-weight: bold;
+  background: #E47A24;
+  color: #9B321F;
+}
+
+textarea {
+  border: 3px solid #9B321F;
+  color: #333;
+  margin-bottom: 10px;
+  min-height: 250px;
+  padding: 5px;
+}
+
+button {
+  font-weight: bold;
+  font-size: 2em;
+  height: 50px;
+  width: 200px;
+  float: right;
+  background: #E47A24;
+  border: 3px solid #9B321F;
+  color: #9B321F;
+  margin-bottom: 20px;
+}
+
+.ui-autocomplete {
+    position: absolute;
+    max-height: 300px;
+    overflow-y: scroll;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;   
+    padding: 4px 0;
+    margin: 0 0 10px 25px;
+    list-style: none;
+    background-color: #ffffff;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+}
+
+.ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.ui-state-hover, .ui-state-active {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #0088cc;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    background-image: none;
+}

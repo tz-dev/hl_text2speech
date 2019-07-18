@@ -1,0 +1,157 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <title>Half-Life Text2Speech</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Half-Life, motherfucker - do you speak it?">
+    <meta name="viewport"    content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"   href="css/normalize.css">
+    <link rel="stylesheet"   href="css/main.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      function text2speech() {
+      	// process text, remove '  ' | '. ' | ' .' | ',' | ';' | '\n'
+        var text      = document.getElementById("input").value;
+            text      = text.replace(". ", ".");
+            text      = text.replace("  ", " ");
+            text      = text.replace(" . ", ".");
+            text      = text.replace(".", " _pause ");
+            text      = text.replace(",", " _pause ");
+            text      = text.replace(";", " _pause ");
+            text      = text.replace(/(\r\n|\n|\r)/gm, " _pause ");
+        var volume    = document.getElementById("volume").value / 100;
+        var words     = text.split(' ');
+        var counter   = -1;
+
+        // add path & create audio
+	      function addPath(item, index, arr) {
+		      arr[index] = new Audio("snd/male/" + item + ".wav");
+				}
+
+	    	words.forEach(addPath);
+
+	    	// play wavs
+				function playSnd() {
+	    	  counter++;
+	    	  if (counter == words.length) return;
+	    	  words[counter].addEventListener('ended', playSnd);
+	    	  words[counter].volume = volume;
+		      words[counter].play();
+				}
+				playSnd();
+  	  }
+		</script>
+
+    <script>
+    	// autocomplete
+    $( function() {
+    	var availableTags = ["a", "accelerating", "accelerator", "accepted", "access", "acknowledge", "acknowledged", "acquired", "acquisition", "across", "activate", "activated", "activity", "adios", "administration", "advanced", "after", "agent", "alarm", "alert", "alien", "aligned", "all", "alpha", "am", "amigo", "ammunition", "an", "and", "announcement", "anomalous", "antenna", "any", "apprehend", "approach", "are", "area", "arm", "armed", "armor", "armory", "arrest", "ass", "at", "atomic", "attention", "authorize", "authorized", "automatic", "away", "b", "back", "backman", "bad", "bag", "bailey", "barracks", "base", "bay", "be", "been", "before", "beyond", "biohazard", "biological", "birdwell", "bizwarn", "black", "blast", "blocked", "bloop", "blue", "bottom", "bravo", "breach", "breached", "break", "bridge", "bust", "but", "button", "buzwarn", "bypass", "c", "cable", "call", "called", "canal", "cap", "captain", "capture", "ceiling", "celsius", "center", "centi", "central", "chamber", "charlie", "check", "checkpoint", "chemical", "cleanup", "clear", "clearance", "close", "code", "coded", "collider", "command", "communication", "complex", "computer", "condition", "containment", "contamination", "control", "coolant", "coomer", "core", "correct", "corridor", "crew", "cross", "cryogenic", "d", "dadeda", "damage", "damaged", "danger", "day", "deactivated", "decompression", "decontamination", "deeoo", "defense", "degrees", "delta", "denied", "deploy", "deployed", "destroy", "destroyed", "detain", "detected", "detonation", "device", "did", "die", "dimensional", "dirt", "disengaged", "dish", "disposal", "distance", "distortion", "do", "doctor", "doop", "door", "down", "dual", "duct", "e", "east", "echo", "ed", "effect", "egress", "eight", "eighteen", "eighty", "electric", "electromagnetic", "elevator", "eleven", "eliminate", "emergency", "energy", "engage", "engaged", "engine", "enter", "entry", "environment", "error", "escape", "evacuate", "exchange", "exit", "expect", "experiment", "experimental", "explode", "explosion", "exposure", "exterminate", "extinguish", "extinguisher", "extreme", "f", "facility", "fahrenheit", "failed", "failure", "farthest", "fast", "feet", "field", "fifteen", "fifth", "fifty", "final", "fine", "fire", "first", "five", "flooding", "floor", "fool", "for", "forbidden", "force", "forms", "found", "four", "fourteen", "fourth", "fourty", "foxtrot", "freeman", "freezer", "from", "front", "fuel", "g", "get", "go", "going", "good", "goodbye", "gordon", "got", "government", "granted", "great", "green", "grenade", "guard", "gulf", "gun", "guthrie", "handling", "hangar", "has", "have", "hazard", "head", "health", "heat", "helicopter", "helium", "hello", "help", "here", "hide", "high", "highest", "hit", "hole", "hostile", "hot", "hotel", "hour", "hours", "hundred", "hydro", "i", "idiot", "illegal", "immediate", "immediately", "in", "inches", "india", "ing", "inoperative", "inside", "inspection", "inspector", "interchange", "intruder", "invalid", "invasion", "is", "it", "johnson", "juliet", "key", "kill", "kilo", "kit", "lab", "lambda", "laser", "last", "launch", "leak", "leave", "left", "legal", "level", "lever", "lie", "lieutenant", "life", "light", "lima", "liquid", "loading", "locate", "located", "location", "lock", "locked", "locker", "lockout", "lower", "lowest", "magnetic", "main", "maintenance", "male.txt", "malfunction", "man", "mass", "materials", "maximum", "may", "medical", "men", "mercy", "mesa", "message", "meter", "micro", "middle", "mike", "miles", "military", "milli", "million", "minefield", "minimum", "minutes", "mister", "mode", "motor", "motorpool", "move", "must", "nearest", "nice", "nine", "nineteen", "ninety", "no", "nominal", "north", "not", "november", "now", "number", "objective", "observation", "of", "officer", "ok", "on", "one", "open", "operating", "operations", "operative", "option", "order", "organic", "oscar", "out", "outside", "over", "overload", "override", "pacify", "pain", "pal", "panel", "percent", "perimeter", "permitted", "personnel", "pipe", "plant", "platform", "please", "point", "portal", "power", "presence", "press", "primary", "proceed", "processing", "progress", "proper", "propulsion", "prosecute", "protective", "push", "quantum", "quebec", "question", "questioning", "quick", "quit", "radiation", "radioactive", "rads", "rapid", "reach", "reached", "reactor", "red", "relay", "released", "remaining", "renegade", "repair", "report", "reports", "required", "research", "resevoir", "resistance", "right", "rocket", "roger", "romeo", "room", "round", "run", "safe", "safety", "sargeant", "satellite", "save", "science", "scream", "screen", "search", "second", "secondary", "seconds", "sector", "secure", "secured", "security", "select", "selected", "service", "seven", "seventeen", "seventy", "severe", "sewage", "sewer", "shield", "shipment", "shock", "shoot", "shower", "shut", "side", "sierra", "sight", "silo", "six", "sixteen", "sixty", "slime", "slow", "soldier", "some", "someone", "something", "son", "sorry", "south", "squad", "square", "stairway", "status", "sterile", "sterilization", "storage", "sub", "subsurface", "sudden", "suit", "superconducting", "supercooled", "supply", "surface", "surrender", "surround", "surrounded", "switch", "system", "systems", "tactical", "take", "talk", "tango", "tank", "target", "team", "temperature", "temporal", "ten", "terminal", "terminated", "termination", "test", "that", "the", "then", "there", "third", "thirteen", "thirty", "this", "those", "thousand", "threat", "three", "through", "time", "to", "top", "topside", "touch", "towards", "track", "train", "transportation", "truck", "tunnel", "turn", "turret", "twelve", "twenty", "two", "unauthorized", "under", "uniform", "unlocked", "until", "up", "upper", "uranium", "us", "usa", "use", "used", "user", "vacate", "valid", "vapor", "vent", "ventillation", "victor", "violated", "violation", "voltage", "vox_login", "walk", "wall", "want", "wanted", "warm", "warn", "warning", "waste", "water", "we", "weapon", "west", "whiskey", "white", "wilco", "will", "with", "without", "woop", "xeno", "yankee", "yards", "year", "yellow", "yes", "you", "your", "yourself", "zero", "zone", "zulu", "_comma", "_period"];
+    
+      function split(val) {return val.split(" ");}
+    
+      function extractLast(term) {return split( term ).pop();}
+   
+      $( "#input" )
+        .on( "keydown", function(event) {
+          if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+              event.preventDefault();
+            }
+          }
+        )
+
+      .autocomplete({
+        minLength: 0,
+        source: function(request, response) {
+          response( $.ui.autocomplete.filter(
+            availableTags, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          return false;
+        },
+        select: function(event, ui) {
+          var terms = split( this.value );
+          terms.pop();
+          terms.push( ui.item.value );
+          terms.push( "" );
+          this.value = terms.join( " " );
+          return false;
+        }
+      });
+    });
+  </script>
+  </head>
+  <body>
+    <section id="main">
+      <img src="img\half_life.png" class="center" id="logo"/>
+      <h1>Half-Life Text to Speech</h1>
+      <textarea id="input" cols="80" rows="10"></textarea>
+      <button id="play" type="button" onclick="text2speech()">Speak</button>
+      <input type="range" min="1" max="100" value="50" class="slider" id="volume">
+
+	    <br style="clear: both;" />
+    
+    	<fieldset>
+	    	<legend>Dictionary</legend>
+		    <section id="dictionary">
+					<h3>A</h3>
+					<p>a, accelerating, accelerator, accepted, access, acknowledge, acknowledged, acquired, acquisition, across, activate, activated, activity, adios, administration, advanced, after, agent, alarm, alert, alien, aligned, all, alpha, am, amigo, ammunition, an, and, announcement, anomalous, antenna, any, apprehend, approach, are, area, arm, armed, armor, armory, arrest, ass, at, atomic, attention, authorize, authorized, automatic, away</p>
+					<h3>B</h3>
+					<p>b, back, backman, bad, bag, bailey, barracks, base, bay, be, been, before, beyond, biohazard, biological, birdwell, bizwarn, black, blast, blocked, bloop, blue, bottom, bravo, breach, breached, break, bridge, bust, but, button, buzwarn, bypass</p>
+					<h3>C</h3>
+					<p>c, cable, call, called, canal, cap, captain, capture, ceiling, celsius, center, centi, central, chamber, charlie, check, checkpoint, chemical, cleanup, clear, clearance, close, code, coded, collider, command, communication, complex, computer, condition, containment, contamination, control, coolant, coomer, core, correct, corridor, crew, cross, cryogenic</p>
+					<h3>D</h3>
+					<p>d, dadeda, damage, damaged, danger, day, deactivated, decompression, decontamination, deeoo, defense, degrees, delta, denied, deploy, deployed, destroy, destroyed, detain, detected, detonation, device, did, die, dimensional, dirt, disengaged, dish, disposal, distance, distortion, do, doctor, doop, door, down, dual, duct</p>
+					<h3>E</h3>
+					<p>e, east, echo, ed, effect, egress, eight, eighteen, eighty, electric, electromagnetic, elevator, eleven, eliminate, emergency, energy, engage, engaged, engine, enter, entry, environment, error, escape, evacuate, exchange, exit, expect, experiment, experimental, explode, explosion, exposure, exterminate, extinguish, extinguisher, extreme</p>
+					<h3>F</h3>
+					<p>f, facility, fahrenheit, failed, failure, farthest, fast, feet, field, fifteen, fifth, fifty, final, fine, fire, first, five, flooding, floor, fool, for, forbidden, force, forms, found, four, fourteen, fourth, fourty, foxtrot, freeman, freezer, from, front, fuel</p>
+					<h3>G</h3>
+					<p>g, get, go, going, good, goodbye, gordon, got, government, granted, great, green, grenade, guard, gulf, gun, guthrie</p>
+					<h3>H</h3>
+					<p>handling, hangar, has, have, hazard, head, health, heat, helicopter, helium, hello, help, here, hide, high, highest, hit, hole, hostile, hot, hotel, hour, hours, hundred, hydro</p>
+					<h3>I</h3>
+					<p>i, idiot, illegal, immediate, immediately, in, inches, india, ing, inoperative, inside, inspection, inspector, interchange, intruder, invalid, invasion, is, it</p>
+					<h3>J</h3>
+					<p>johnson, juliet</p>
+					<h3>K</h3>
+					<p>key, kill, kilo, kit</p>
+					<h3>L</h3>
+					<p>lab, lambda, laser, last, launch, leak, leave, left, legal, level, lever, lie, lieutenant, life, light, lima, liquid, loading, locate, located, location, lock, locked, locker, lockout, lower, lowest</p>
+					<h3>M</h3>
+					<p>magnetic, main, maintenance, male.txt, malfunction, man, mass, materials, maximum, may, medical, men, mercy, mesa, message, meter, micro, middle, mike, miles, military, milli, million, minefield, minimum, minutes, mister, mode, motor, motorpool, move, must</p>
+					<h3>N</h3>
+					<p>nearest, nice, nine, nineteen, ninety, no, nominal, north, not, november, now, number</p>
+					<h3>O</h3>
+					<p>objective, observation, of, officer, ok, on, one, open, operating, operations, operative, option, order, organic, oscar, out, outside, over, overload, override</p>
+					<h3>P</h3>
+					<p>pacify, pain, pal, panel, percent, perimeter, permitted, personnel, pipe, plant, platform, please, point, portal, power, presence, press, primary, proceed, processing, progress, proper, propulsion, prosecute, protective, push</p>
+					<h3>Q</h3>
+					<p>quantum, quebec, question, questioning, quick, quit</p>
+					<h3>R</h3>
+					<p>radiation, radioactive, rads, rapid, reach, reached, reactor, red, relay, released, remaining, renegade, repair, report, reports, required, research, resevoir, resistance, right, rocket, roger, romeo, room, round, run</p>
+					<h3>S</h3>
+					<p>safe, safety, sargeant, satellite, save, science, scream, screen, search, second, secondary, seconds, sector, secure, secured, security, select, selected, service, seven, seventeen, seventy, severe, sewage, sewer, shield, shipment, shock, shoot, shower, shut, side, sierra, sight, silo, six, sixteen, sixty, slime, slow, soldier, some, someone, something, son, sorry, south, squad, square, stairway, status, sterile, sterilization, storage, sub, subsurface, sudden, suit, superconducting, supercooled, supply, surface, surrender, surround, surrounded, switch, system, systems</p>
+					<h3>T</h3>
+					<p>tactical, take, talk, tango, tank, target, team, temperature, temporal, ten, terminal, terminated, termination, test, that, the, then, there, third, thirteen, thirty, this, those, thousand, threat, three, through, time, to, top, topside, touch, towards, track, train, transportation, truck, tunnel, turn, turret, twelve, twenty, two</p>
+					<h3>U</h3>
+					<p>unauthorized, under, uniform, unlocked, until, up, upper, uranium, us, usa, use, used, user</p>
+					<h3>V</h3>
+					<p>vacate, valid, vapor, vent, ventillation, victor, violated, violation, voltage, vox_login</p>
+					<h3>W</h3>
+					<p>walk, wall, want, wanted, warm, warn, warning, waste, water, we, weapon, west, whiskey, white, wilco, will, with, without, woop</p>
+					<h3>X</h3>
+					<p>xeno</p>
+					<h3>Y</h3>
+					<p>yankee, yards, year, yellow, yes, you, your, yourself</p>
+					<h3>Z</h3>
+					<p>zero, zone, zulu</p>
+					<h3>MISC</h3>
+					<p>_comma, _period, _beep, _fuzz</p>
+				</section>
+			</fieldset>
+    </section>
+    <br style="clear: both;" />
+  </body>
+</html>
