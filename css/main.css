@@ -13,12 +13,17 @@ section#main {
   top: 5%;
   left: 25%;
   padding: 10px;
+  margin-left: -7px;
   border: 3px solid #9B321F;
 }
 
 #logo {
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+#clear {
+  margin-top: 120px;
 }
 
 textarea {
@@ -42,7 +47,10 @@ h1 {
 
 h3 {
   color: #9B321F;
+  margin-bottom: 0;
 }
+
+p {margin-top: 0}
 
 .slider {
   float: right;
@@ -89,6 +97,16 @@ textarea {
   padding: 5px;
 }
 
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #E47A24;
+}
+
+a:hover {
+  color: #9B321F;
+}
+
 button {
   font-weight: bold;
   font-size: 2em;
@@ -99,6 +117,7 @@ button {
   border: 3px solid #9B321F;
   color: #9B321F;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .ui-autocomplete {
