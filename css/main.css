@@ -98,13 +98,14 @@ fieldset, legend {
 }
 
 fieldset#speaker {
-  width: 17.1%;
+  min-width: 17.1%;
   float: right;
   margin-top: 15px;
 }
 
 fieldset span {
   cursor: pointer;
+  margin-right: 20px;
 }
 
 legend {
