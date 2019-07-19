@@ -29,7 +29,7 @@ section#main {
 }
 
 #clear {
-  margin-top: 122px;
+  margin-top: 0px;
 }
 
 textarea#input {
@@ -38,9 +38,6 @@ textarea#input {
   width: 75%;
   color: #E47A24;
   resize: none;
-}
-
-textarea#clipboard {
 }
 
 label#volume {
@@ -100,7 +97,17 @@ fieldset, legend {
   background: #403F2D;
 }
 
-legend{
+fieldset#speaker {
+  width: 18%;
+  float: right;
+  margin-top: 15px;
+}
+
+fieldset span {
+  cursor: pointer;
+}
+
+legend {
   font-weight: bold;
   background: #E47A24;
   color: #9B321F;
@@ -129,7 +136,7 @@ a:hover {
 button {
   font-weight: bold;
   font-size: 2em;
-  height: 50px;
+  height: 47px;
   width: 20%;
   float: right;
   background: #E47A24;
@@ -137,6 +144,10 @@ button {
   border-radius: 10px;
   color: #9B321F;
   margin-bottom: 20px;
+  cursor: pointer;
+}
+
+input[type=radio] {
   cursor: pointer;
 }
 
@@ -245,4 +256,3 @@ a.last {
   color: #9B321F;
   background: #E47A24;
 }
-

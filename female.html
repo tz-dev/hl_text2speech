@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <title>Half-Life Text2Speech - Female</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Half-Life, motherfucker - do you speak it?">
+    <meta name="viewport"    content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"   href="css/normalize.css">
+    <link rel="stylesheet"   href="css/main.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/custom_female.js"></script>
+  </head>
+  <body>
+    <section id="main">
+      <img src="img/half_life.png" class="center" id="logo" alt="logo" style="width:700px"/>
+      <h1>TEXT TO SPEECH</h1>
+      <textarea id="input" cols="80" rows="10" autofocus></textarea>
+      <button id="play" type="button" onclick="text2speech()">SPEAK</button>
+      <button id="clear" type="button" onclick="document.getElementById('input').value = ''; document.location.reload(true)">CLEAR</button>
+      <input type="range" min="1" max="100" value="75" class="slider" id="volume">
+      <fieldset id="speaker"><legend><div class="tooltip">Speaker<span class="tooltiptext">Click to select speaker</span></div></legend>
+        <input type="radio" onclick="window.location='index.html';" unchecked> <span onclick="window.location='index.html';">male</span> <input type="radio" checked> <span>female</span>
+      </fieldset>
+      <br style="clear: both;" />
+      <fieldset>
+        <legend><div class="tooltip">Dictionary<span class="tooltiptext">Click on vocabulary to insert at cursor position</span></div></legend>
+        <div id="quicklinks">
+          <a href="#A" class="first">A</a> <a href="#B">B</a> <a href="#C">C</a> <a href="#D">D</a> <a href="#E">E</a> <a href="#F">F</a> <a href="#G">G</a> <a href="#H">H</a> <a href="#I">I</a> <a href="#J">J</a> 
+          <a href="#K">K</a> <a href="#L">L</a> <a href="#M">M</a> <a href="#N">N</a> <a href="#O">O</a> <a href="#P">P</a> <a href="#Q">Q</a> <a href="#R">R</a> <a href="#S">S</a> <a href="#T">T</a> 
+          <a href="#U">U</a> <a href="#V">V</a> <a href="#W">W</a> <a href="#X">X</a> <a href="#Y">Y</a> <a href="#Z">Z</a> <a href="#MISC" class="last">misc</a>
+        </div>
+        <section id="dictionary">
+          <h3 id="A">A</h3>
+          <a href="#" onclick="addWord($(this).text());">acquired</a> <a href="#" onclick="addWord($(this).text());">activated</a> <a href="#" onclick="addWord($(this).text());">administering_medical</a> <a href="#" onclick="addWord($(this).text());">adrenaline_shot</a> <a href="#" onclick="addWord($(this).text());">alert</a> <a href="#" onclick="addWord($(this).text());">am</a> <a href="#" onclick="addWord($(this).text());">ammo_depleted</a> <a href="#" onclick="addWord($(this).text());">ammo_pickup</a> <a href="#" onclick="addWord($(this).text());">antidote_shot</a> <a href="#" onclick="addWord($(this).text());">antitoxin_shot</a> <a href="#" onclick="addWord($(this).text());">armor_compromised</a> <a href="#" onclick="addWord($(this).text());">armor_gone</a> <a href="#" onclick="addWord($(this).text());">atmospherics_on</a> <a href="#" onclick="addWord($(this).text());">automedic_on</a> 
+          <h3 id="B">B</h3>
+          <a href="#" onclick="addWord($(this).text());">biohazard_detected</a> <a href="#" onclick="addWord($(this).text());">bio_reading</a> <a href="#" onclick="addWord($(this).text());">bleeding_stopped</a> <a href="#" onclick="addWord($(this).text());">blip</a> <a href="#" onclick="addWord($(this).text());">blood_loss</a> <a href="#" onclick="addWord($(this).text());">blood_plasma</a> <a href="#" onclick="addWord($(this).text());">blood_toxins</a> 
+          <h3 id="C">C</h3>
+          <a href="#" onclick="addWord($(this).text());">chemical_detected</a> <a href="#" onclick="addWord($(this).text());">communications_on</a> 
+          <h3 id="D">D</h3>
+          <a href="#" onclick="addWord($(this).text());">danger</a> <a href="#" onclick="addWord($(this).text());">deactivated</a> 
+          <h3 id="E">E</h3>
+          <a href="#" onclick="addWord($(this).text());">east</a> <a href="#" onclick="addWord($(this).text());">eight</a> <a href="#" onclick="addWord($(this).text());">eighteen</a> <a href="#" onclick="addWord($(this).text());">eighty</a> <a href="#" onclick="addWord($(this).text());">eleven</a> <a href="#" onclick="addWord($(this).text());">evacuate_area</a> 
+          <h3 id="F">F</h3>
+          <a href="#" onclick="addWord($(this).text());">fifteen</a> <a href="#" onclick="addWord($(this).text());">fifty</a> <a href="#" onclick="addWord($(this).text());">five</a> <a href="#" onclick="addWord($(this).text());">four</a> <a href="#" onclick="addWord($(this).text());">fourteen</a> <a href="#" onclick="addWord($(this).text());">fourty</a> <a href="#" onclick="addWord($(this).text());">fuzz</a> 
+          <h3 id="G">G</h3>
+          <a href="#" onclick="addWord($(this).text());">get_44ammo</a> <a href="#" onclick="addWord($(this).text());">get_44pistol</a> <a href="#" onclick="addWord($(this).text());">get_9mmclip</a> <a href="#" onclick="addWord($(this).text());">get_alien_wpn</a> <a href="#" onclick="addWord($(this).text());">get_assault</a> <a href="#" onclick="addWord($(this).text());">get_assaultgren</a> <a href="#" onclick="addWord($(this).text());">get_battery</a> <a href="#" onclick="addWord($(this).text());">get_bolts</a> <a href="#" onclick="addWord($(this).text());">get_buckshot</a> <a href="#" onclick="addWord($(this).text());">get_crossbow</a> <a href="#" onclick="addWord($(this).text());">get_egon</a> <a href="#" onclick="addWord($(this).text());">get_egonpower</a> <a href="#" onclick="addWord($(this).text());">get_gauss</a> <a href="#" onclick="addWord($(this).text());">get_grenade</a> <a href="#" onclick="addWord($(this).text());">get_medkit</a> <a href="#" onclick="addWord($(this).text());">get_pistol</a> <a href="#" onclick="addWord($(this).text());">get_rpg</a> <a href="#" onclick="addWord($(this).text());">get_rpgammo</a> <a href="#" onclick="addWord($(this).text());">get_satchel</a> <a href="#" onclick="addWord($(this).text());">get_shotgun</a> <a href="#" onclick="addWord($(this).text());">get_tripmine</a> 
+          <h3 id="H">H</h3>
+          <a href="#" onclick="addWord($(this).text());">health_critical</a> <a href="#" onclick="addWord($(this).text());">health_dropping</a> <a href="#" onclick="addWord($(this).text());">health_dropping2</a> <a href="#" onclick="addWord($(this).text());">heat_damage</a> <a href="#" onclick="addWord($(this).text());">hev_critical_fail</a> <a href="#" onclick="addWord($(this).text());">hev_damage</a> <a href="#" onclick="addWord($(this).text());">hev_general_fail</a> <a href="#" onclick="addWord($(this).text());">hev_logon</a> <a href="#" onclick="addWord($(this).text());">hev_shutdown</a> <a href="#" onclick="addWord($(this).text());">hours</a> 
+          <h3 id="I">I</h3>
+          <a href="#" onclick="addWord($(this).text());">immediately</a> <a href="#" onclick="addWord($(this).text());">innsuficient_medical</a> <a href="#" onclick="addWord($(this).text());">internal_bleeding</a> 
+          <h3 id="J">J</h3>
+          <h3 id="K">K</h3>
+          <h3 id="L">L</h3>
+          <h3 id="M">M</h3>
+          <a href="#" onclick="addWord($(this).text());">major_fracture</a> <a href="#" onclick="addWord($(this).text());">major_lacerations</a> <a href="#" onclick="addWord($(this).text());">medical_repaired</a> <a href="#" onclick="addWord($(this).text());">meters</a> <a href="#" onclick="addWord($(this).text());">minor_fracture</a> <a href="#" onclick="addWord($(this).text());">minor_lacerations</a> <a href="#" onclick="addWord($(this).text());">minutes</a> <a href="#" onclick="addWord($(this).text());">morphine_shot</a> <a href="#" onclick="addWord($(this).text());">munitionview_on</a> 
+          <h3 id="N">N</h3>
+          <a href="#" onclick="addWord($(this).text());">near_death</a> <a href="#" onclick="addWord($(this).text());">nine</a> <a href="#" onclick="addWord($(this).text());">nineteen</a> <a href="#" onclick="addWord($(this).text());">ninety</a> <a href="#" onclick="addWord($(this).text());">north</a> 
+          <h3 id="O">O</h3>
+          <a href="#" onclick="addWord($(this).text());">one</a> <a href="#" onclick="addWord($(this).text());">onehundred</a> <a href="#" onclick="addWord($(this).text());">online</a> 
+          <h3 id="P">P</h3>
+          <a href="#" onclick="addWord($(this).text());">pain_block</a> <a href="#" onclick="addWord($(this).text());">percent</a> <a href="#" onclick="addWord($(this).text());">pm</a> <a href="#" onclick="addWord($(this).text());">position</a> <a href="#" onclick="addWord($(this).text());">powerarmor_on</a> <a href="#" onclick="addWord($(this).text());">powermove_on</a> <a href="#" onclick="addWord($(this).text());">powermove_overload</a> <a href="#" onclick="addWord($(this).text());">power_below</a> <a href="#" onclick="addWord($(this).text());">power_level_is</a> <a href="#" onclick="addWord($(this).text());">power_restored</a> 
+          <h3 id="Q">Q</h3>
+          <h3 id="R">R</h3>
+          <a href="#" onclick="addWord($(this).text());">radiation_detected</a> <a href="#" onclick="addWord($(this).text());">range</a> <a href="#" onclick="addWord($(this).text());">remaining</a> 
+          <h3 id="S">S</h3>
+          <a href="#" onclick="addWord($(this).text());">safe_day</a> <a href="#" onclick="addWord($(this).text());">seconds</a> <a href="#" onclick="addWord($(this).text());">seek_medic</a> <a href="#" onclick="addWord($(this).text());">seven</a> <a href="#" onclick="addWord($(this).text());">seventeen</a> <a href="#" onclick="addWord($(this).text());">seventy</a> <a href="#" onclick="addWord($(this).text());">shock_damage</a> <a href="#" onclick="addWord($(this).text());">six</a> <a href="#" onclick="addWord($(this).text());">sixteen</a> <a href="#" onclick="addWord($(this).text());">sixty</a> <a href="#" onclick="addWord($(this).text());">south</a> 
+          <h3 id="T">T</h3>
+          <a href="#" onclick="addWord($(this).text());">targetting_system</a> <a href="#" onclick="addWord($(this).text());">ten</a> <a href="#" onclick="addWord($(this).text());">thirteen</a> <a href="#" onclick="addWord($(this).text());">thirty</a> <a href="#" onclick="addWord($(this).text());">three</a> <a href="#" onclick="addWord($(this).text());">time_is_now</a> <a href="#" onclick="addWord($(this).text());">time_remaining</a> <a href="#" onclick="addWord($(this).text());">torniquette_applied</a> <a href="#" onclick="addWord($(this).text());">twelve</a> <a href="#" onclick="addWord($(this).text());">twenty</a> <a href="#" onclick="addWord($(this).text());">twentyfive</a> <a href="#" onclick="addWord($(this).text());">two</a> 
+          <h3 id="U">U</h3>
+          <h3 id="V">V</h3>
+          <a href="#" onclick="addWord($(this).text());">vitalsigns_on</a> <a href="#" onclick="addWord($(this).text());">voice_off</a> <a href="#" onclick="addWord($(this).text());">voice_on</a> 
+          <h3 id="W">W</h3>
+          <a href="#" onclick="addWord($(this).text());">warning</a> <a href="#" onclick="addWord($(this).text());">weaponselect_on</a> <a href="#" onclick="addWord($(this).text());">weapon_pickup</a> <a href="#" onclick="addWord($(this).text());">west</a> <a href="#" onclick="addWord($(this).text());">wound_sterilized</a> 
+          <h3 id="X">X</h3>
+          <h3 id="Y">Y</h3>
+          <h3 id="Z">Z</h3>
+          <a href="#" onclick="addWord($(this).text());">your</a> 
+          <h3 id="MISC">MISC</h3>
+          <p><a href="#" onclick="addWord($(this).text());">_beep</a> <a href="#" onclick="addWord($(this).text());">_bell</a> <a href="#" onclick="addWord($(this).text());">_bizwarn</a> <a href="#" onclick="addWord($(this).text());">_bloop</a> <a href="#" onclick="addWord($(this).text());">_boop</a> <a href="#" onclick="addWord($(this).text());">_buzwarn</a> <a href="#" onclick="addWord($(this).text());">_buzz</a> <a href="#" onclick="addWord($(this).text());">_dadeda</a> <a href="#" onclick="addWord($(this).text());">_deeoo</a> <a href="#" onclick="addWord($(this).text());">_doop</a> <a href="#" onclick="addWord($(this).text());">_flatline</a> <a href="#" onclick="addWord($(this).text());">_fuzz</a> <a href="#" onclick="addWord($(this).text());">_hiss</a> <a href="#" onclick="addWord($(this).text());">_woop</a></p>
+        </section>
+      </fieldset>
+    </section> 
+    <br style="clear: both;" />
+    <script type="text/javascript">
+      // keep input always in focus
+      document.getElementById('input').onblur = function(event) { 
+        var blurEl = this; 
+        setTimeout(function() {
+          blurEl.focus()
+        }, 10);
+      };
+    </script>
+  </body>
+</html>
