@@ -5,6 +5,9 @@ Tested in FF only.
 
 Features:
 	- Autocomplete functionality
-	- Dictionary with over 600 entries
-	- Vocabulary can be added to text by click
+	- Speaker selection (male / female)
+	- Dictionary with over 600 entries (male)
+	- Dictionary with over 140 entries (female)
+	- several effects (both)
+	- Vocabulary can be added to textarea by click
 	- Volume Slider
