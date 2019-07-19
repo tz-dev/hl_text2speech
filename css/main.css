@@ -1,3 +1,7 @@
+
+* {
+  outline: none;
+}
 html {
   color: #E47A24;
   font-size: 1em;
@@ -9,12 +13,14 @@ html {
 section#main {
   background: #3B352C;
   width: 50%;
+  min-width: 920px;
   position: absolute;
   top: 5%;
   left: 25%;
   padding: 10px;
   margin-left: -7px;
   border: 3px solid #9B321F;
+  border-radius: 10px;
 }
 
 #logo {
@@ -23,14 +29,18 @@ section#main {
 }
 
 #clear {
-  margin-top: 120px;
+  margin-top: 122px;
 }
 
-textarea {
+textarea#input {
   float: left;
   margin-right: 10px;
-  width: 700px;
+  width: 75%;
   color: #E47A24;
+  resize: none;
+}
+
+textarea#clipboard {
 }
 
 label#volume {
@@ -42,7 +52,10 @@ h1 {
   color: #E47A24;
   width: 99.5%;
   border: 3px solid #9B321F;
+  border-radius: 10px;
   background: #403F2D;
+  cursor: default;
+  letter-spacing: 0.25em;
 }
 
 h3 {
@@ -54,7 +67,8 @@ p {margin-top: 0}
 
 .slider {
   float: right;
-  width: 200px;
+  width: 20%;
+  cursor: pointer;
 }
 
 .ui-helper-hidden-accessible {display: none;}
@@ -71,14 +85,17 @@ p {margin-top: 0}
   height: 175px;
   overflow-x: scroll;
   overflow-x: hidden;
-  background: #fff;
+  background: #ddd;
   color: #E47A24;
   border: 3px solid #E47A24;
+  border-radius: 10px;
   padding: 5px;
+  cursor: default;
 }
 
 fieldset, legend {
   border: 3px solid #9B321F;
+  border-radius: 10px;
   padding: 10px;
   background: #403F2D;
 }
@@ -87,10 +104,12 @@ legend{
   font-weight: bold;
   background: #E47A24;
   color: #9B321F;
+  cursor: help;
 }
 
 textarea {
   border: 3px solid #9B321F;
+  border-radius: 10px;
   color: #333;
   margin-bottom: 10px;
   min-height: 250px;
@@ -111,10 +130,11 @@ button {
   font-weight: bold;
   font-size: 2em;
   height: 50px;
-  width: 200px;
+  width: 20%;
   float: right;
   background: #E47A24;
   border: 3px solid #9B321F;
+  border-radius: 10px;
   color: #9B321F;
   margin-bottom: 20px;
   cursor: pointer;
@@ -138,9 +158,9 @@ button {
     border-color: rgba(0, 0, 0, 0.2);
     border-style: solid;
     border-width: 1px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -171,3 +191,58 @@ button {
     -moz-border-radius: 0px;
     background-image: none;
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  padding: 5px;
+  background-color: #403F2D;
+  border: 3px solid #9B321F;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+#quicklinks {
+  width: 75%;
+  margin:auto;
+  margin-top:-23px;
+  margin-bottom: 8px
+}
+
+#quicklinks a {
+  color: #E47A24;
+  background: #ddd;
+  padding: 2px;
+  border: 2px solid #E47A24;
+}
+
+a.first {
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+a.last {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+#quicklinks a:hover {
+  color: #9B321F;
+  background: #E47A24;
+}
+
