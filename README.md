@@ -1,4 +1,5 @@
-# index.html
+# ONLINE DEMO:
+# https://tz-dev.github.io/hl_text2speech/index.html
 
 # Half Life / Text to Speech
 # ==========================
