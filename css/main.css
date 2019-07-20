@@ -36,6 +36,7 @@ textarea#input {
   float: left;
   margin-right: 10px;
   width: 75%;
+  min-height: 295px;
   color: #E47A24;
   resize: none;
 }
@@ -108,6 +109,11 @@ fieldset span {
   margin-right: 20px;
 }
 
+fieldset span.radio {
+  width: 47px;
+  float: left;
+}
+
 legend {
   font-weight: bold;
   background: #E47A24;
@@ -150,6 +156,9 @@ button {
 
 input[type=radio] {
   cursor: pointer;
+  float: left;
+  margin-top: 4px;
+  margin-right: 5px;
 }
 
 .ui-autocomplete {

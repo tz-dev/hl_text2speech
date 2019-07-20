@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <title>Half-Life Text2Speech - Police</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Half-Life, motherfucker - do you speak it?">
+    <meta name="viewport"    content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"   href="css/normalize.css">
+    <link rel="stylesheet"   href="css/main.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/custom_police.js"></script>
+  </head>
+  <body>
+    <section id="main">
+      <img src="img/half_life.png" class="center" id="logo" alt="logo" style="width:700px"/>
+      <h1>TEXT TO SPEECH</h1>
+      <textarea id="input" cols="80" rows="10" autofocus style="background: #fff url(img/Police.png) no-repeat bottom right;"></textarea>
+      <button id="play" type="button" onclick="text2speech()">SPEAK</button>
+      <button id="clear" type="button" onclick="document.getElementById('input').value = ''; document.location.reload(true)">CLEAR</button>
+      <input type="range" min="1" max="100" value="75" class="slider" id="volume">
+      <fieldset id="speaker"><legend><div class="tooltip">Speaker<span class="tooltiptext">Click to select speaker</span></div></legend>
+        <input type="radio" onclick="window.location='index.html';"     unchecked> <span class="radio" onclick="window.location='index.html';">B.M.A.S.</span>
+        <input type="radio" onclick="window.location='female.html';"    unchecked> <span class="radio" onclick="window.location='female.html';">H.E.V.</span><br />
+        <input type="radio" onclick="window.location='barney.html';"    unchecked> <span onclick="window.location='barney.html';" class="radio">Barney</span>
+        <input type="radio" checked> <span class="radio">Police</span><br />
+        <input type="radio" onclick="window.location='scientist.html';" unchecked> <span onclick="window.location='scientist.html';" class="radio">Scientist</span>
+        <input type="radio" onclick="window.location='soldier.html';"   unchecked> <span onclick="window.location='soldier.html';" class="radio">Soldier</span>
+      </fieldset>
+      <br style="clear: both;" />
+      <fieldset>
+        <legend><div class="tooltip">Dictionary<span class="tooltiptext">Click on vocabulary to insert at cursor position</span></div></legend>
+        <div id="quicklinks">
+          <a href="#A" class="first">A</a> <a href="#B">B</a> <a href="#C">C</a> <a href="#D">D</a> <a href="#E">E</a> <a href="#F">F</a> <a href="#G">G</a> <a href="#H">H</a> <a href="#I">I</a> <a href="#J">J</a> 
+          <a href="#K">K</a> <a href="#L">L</a> <a href="#M">M</a> <a href="#N">N</a> <a href="#O">O</a> <a href="#P">P</a> <a href="#Q">Q</a> <a href="#R">R</a> <a href="#S">S</a> <a href="#T">T</a> 
+          <a href="#U">U</a> <a href="#V">V</a> <a href="#W">W</a> <a href="#X">X</a> <a href="#Y">Y</a> <a href="#Z">Z</a> <a href="#MISC" class="last">misc</a>
+        </div>
+        <section id="dictionary">
+          <h3 id="A">A</h3>
+          <p><a href="#" onclick="addWord($(this).text());">alien1</a> <a href="#" onclick="addWord($(this).text());">alien2</a> <a href="#" onclick="addWord($(this).text());">alien3</a> <a href="#" onclick="addWord($(this).text());">alien4</a> <a href="#" onclick="addWord($(this).text());">answer1</a> <a href="#" onclick="addWord($(this).text());">answer2</a> <a href="#" onclick="addWord($(this).text());">answer3</a> <a href="#" onclick="addWord($(this).text());">answer4</a> <a href="#" onclick="addWord($(this).text());">answer5</a> <a href="#" onclick="addWord($(this).text());">answer6</a> <a href="#" onclick="addWord($(this).text());">answer7</a> <a href="#" onclick="addWord($(this).text());">asshole</a></p>
+          <h3 id="B">B</h3>
+          <p><a href="#" onclick="addWord($(this).text());">bravopost</a> <a href="#" onclick="addWord($(this).text());">bravopostisinposition</a></p>
+          <h3 id="C">C</h3>
+          <p><a href="#" onclick="addWord($(this).text());">charge1</a> <a href="#" onclick="addWord($(this).text());">charge2</a> <a href="#" onclick="addWord($(this).text());">charge3</a> <a href="#" onclick="addWord($(this).text());">charge4</a> <a href="#" onclick="addWord($(this).text());">charge5</a> <a href="#" onclick="addWord($(this).text());">check1</a> <a href="#" onclick="addWord($(this).text());">check2</a> <a href="#" onclick="addWord($(this).text());">check3</a> <a href="#" onclick="addWord($(this).text());">check4</a> <a href="#" onclick="addWord($(this).text());">check5</a> <a href="#" onclick="addWord($(this).text());">check6</a> <a href="#" onclick="addWord($(this).text());">check7</a> <a href="#" onclick="addWord($(this).text());">check8</a> <a href="#" onclick="addWord($(this).text());">clear1</a> <a href="#" onclick="addWord($(this).text());">clear10</a> <a href="#" onclick="addWord($(this).text());">clear11</a> <a href="#" onclick="addWord($(this).text());">clear12</a> <a href="#" onclick="addWord($(this).text());">clear2</a> <a href="#" onclick="addWord($(this).text());">clear3</a> <a href="#" onclick="addWord($(this).text());">clear4</a> <a href="#" onclick="addWord($(this).text());">clear5</a> <a href="#" onclick="addWord($(this).text());">clear6</a> <a href="#" onclick="addWord($(this).text());">clear7</a> <a href="#" onclick="addWord($(this).text());">clear8</a> <a href="#" onclick="addWord($(this).text());">clear9</a> <a href="#" onclick="addWord($(this).text());">cover1</a> <a href="#" onclick="addWord($(this).text());">cover2</a> <a href="#" onclick="addWord($(this).text());">cover3</a> <a href="#" onclick="addWord($(this).text());">cover4</a> <a href="#" onclick="addWord($(this).text());">cover5</a> <a href="#" onclick="addWord($(this).text());">cover6</a></p>
+          <h3 id="D">D</h3>
+          <p><a href="#" onclick="addWord($(this).text());">damnit</a> <a href="#" onclick="addWord($(this).text());">deltateam</a> <a href="#" onclick="addWord($(this).text());">die1</a> <a href="#" onclick="addWord($(this).text());">die2</a> <a href="#" onclick="addWord($(this).text());">die3</a></p>
+          <h3 id="E">E</h3>
+          <h3 id="F">F</h3>
+          <h3 id="G">G</h3>
+          <p><a href="#" onclick="addWord($(this).text());">gethim</a> <a href="#" onclick="addWord($(this).text());">gren1</a> <a href="#" onclick="addWord($(this).text());">gren2</a> <a href="#" onclick="addWord($(this).text());">gren3</a> <a href="#" onclick="addWord($(this).text());">gren4</a> <a href="#" onclick="addWord($(this).text());">gren5</a> <a href="#" onclick="addWord($(this).text());">gren6</a> <a href="#" onclick="addWord($(this).text());">gr_mgun1</a> <a href="#" onclick="addWord($(this).text());">gr_mgun2</a> <a href="#" onclick="addWord($(this).text());">gr_reload1</a></p>
+          <h3 id="H">H</h3>
+          <h3 id="I">I</h3>
+          <p><a href="#" onclick="addWord($(this).text());">idle1</a> <a href="#" onclick="addWord($(this).text());">idle2</a> <a href="#" onclick="addWord($(this).text());">idle3</a> <a href="#" onclick="addWord($(this).text());">inposition</a></p>
+          <h3 id="J">J</h3>
+          <h3 id="K">K</h3>
+          <p><a href="#" onclick="addWord($(this).text());">killthatbastard</a> </p>
+          <h3 id="L">L</h3>
+          <h3 id="M">M</h3>
+          <p><a href="#" onclick="addWord($(this).text());">medic</a></p>
+          <h3 id="N">N</h3>
+          <p><a href="#" onclick="addWord($(this).text());">neutralise</a></p>
+          <h3 id="O">O</h3>
+          <h3 id="P">P</h3>
+          <p><a href="#" onclick="addWord($(this).text());">pain1</a> <a href="#" onclick="addWord($(this).text());">pain2</a> <a href="#" onclick="addWord($(this).text());">pain3</a> <a href="#" onclick="addWord($(this).text());">pain4</a> <a href="#" onclick="addWord($(this).text());">pain5</a> <a href="#" onclick="addWord($(this).text());">player1</a> <a href="#" onclick="addWord($(this).text());">player2</a> <a href="#" onclick="addWord($(this).text());">player3</a> <a href="#" onclick="addWord($(this).text());">player4</a> <a href="#" onclick="addWord($(this).text());">player5</a> <a href="#" onclick="addWord($(this).text());">player6</a> <a href="#" onclick="addWord($(this).text());">player7</a></p>
+          <h3 id="Q">Q</h3>
+          <p><a href="#" onclick="addWord($(this).text());">quest1</a> <a href="#" onclick="addWord($(this).text());">quest10</a> <a href="#" onclick="addWord($(this).text());">quest11</a> <a href="#" onclick="addWord($(this).text());">quest12</a> <a href="#" onclick="addWord($(this).text());">quest2</a> <a href="#" onclick="addWord($(this).text());">quest3</a> <a href="#" onclick="addWord($(this).text());">quest4</a> <a href="#" onclick="addWord($(this).text());">quest5</a> <a href="#" onclick="addWord($(this).text());">quest6</a> <a href="#" onclick="addWord($(this).text());">quest7</a> <a href="#" onclick="addWord($(this).text());">quest8</a> <a href="#" onclick="addWord($(this).text());">quest9</a></p>
+          <h3 id="R">R</h3>
+          <h3 id="S">S</h3>
+          <p><a href="#" onclick="addWord($(this).text());">shit</a> <a href="#" onclick="addWord($(this).text());">sonofabitch</a> <a href="#" onclick="addWord($(this).text());">squad</a> <a href="#" onclick="addWord($(this).text());">suckitdown</a></p>
+          <h3 id="T">T</h3>
+          <p><a href="#" onclick="addWord($(this).text());">target</a> <a href="#" onclick="addWord($(this).text());">taunt1</a> <a href="#" onclick="addWord($(this).text());">taunt2</a> <a href="#" onclick="addWord($(this).text());">taunt3</a> <a href="#" onclick="addWord($(this).text());">taunt4</a> <a href="#" onclick="addWord($(this).text());">taunt5</a> <a href="#" onclick="addWord($(this).text());">taunt6</a> <a href="#" onclick="addWord($(this).text());">throw1</a> <a href="#" onclick="addWord($(this).text());">throw2</a> <a href="#" onclick="addWord($(this).text());">throw3</a> <a href="#" onclick="addWord($(this).text());">throw4</a></p>
+          <h3 id="U">U</h3>
+          <h3 id="V">V</h3>
+          <h3 id="W">W</h3>
+          <h3 id="X">X</h3>
+          <h3 id="Y">Y</h3>
+          <p><a href="#" onclick="addWord($(this).text());">youasshole</a></p>
+          <h3 id="Z">Z</h3>
+          <h3 id="MISC">MISC</h3>
+          <p>&nbsp;</p>
+        </section>
+      </fieldset>
+    </section> 
+    <br style="clear: both;" />
+    <script type="text/javascript">
+      // keep input always in focus
+      document.getElementById('input').onblur = function(event) { 
+        var blurEl = this; 
+        setTimeout(function() {
+          blurEl.focus()
+        }, 10);
+      };
+    </script>
+  </body>
+</html>
+
+
