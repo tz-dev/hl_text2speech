@@ -10,11 +10,11 @@ function addWord(x) {
 function text2speech() {
 // process text
   var text      = document.getElementById("input").value;
-      text      = text.replace(" . ", " _pause ");
-      text      = text.replace("."  , " _pause ");
-      text      = text.replace(","  , " _pause ");
-      text      = text.replace(";"  , " _pause ");
-      text      = text.replace(/(\r\n|\n|\r)/gm, " _pause ");
+      text      = text.replace(" . ", " pause ");
+      text      = text.replace("."  , " pause ");
+      text      = text.replace(","  , " pause ");
+      text      = text.replace(";"  , " pause ");
+      text      = text.replace(/(\r\n|\n|\r)/gm, " pause ");
       text      = text.replace(/ {1,}/g," ");
       text      = text.trim();
   var words     = text.split(' ');
