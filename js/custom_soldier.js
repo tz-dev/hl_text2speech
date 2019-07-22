@@ -1,3 +1,10 @@
+var stop = false;
+
+function stop2speak() {
+// the easy way out
+  location.reload();
+}
+
 function addWord(x) {
 // add words from dictionary at cursor position
   var $txt = jQuery("#input");
@@ -21,23 +28,37 @@ function text2speech() {
   var volume    = document.getElementById("volume").value / 100;
   var counter   = -1;
 
-  function addType(item, index, arr) {
-  // add path & type, create audio
-    arr[index] = new Audio("snd/soldier/" + item + ".wav");
+  if (words[0].length > 0) {
+    function addType(item, index, arr) {
+    // add path & type, create audio
+      arr[index] = new Audio("snd/soldier/" + item + ".wav");
+    }
+
+    words.forEach(addType);
+
+    function playSnd() {
+    // play wavs
+      document.getElementById("play").style.display = "none";
+      document.getElementById("stop").style.display = "inline";
+      counter++;
+      if (counter == words.length) {
+        document.getElementById("play").style.display = "inline";
+        document.getElementById("stop").style.display = "none";
+        return;
+      };
+      words[counter].addEventListener('ended', playSnd);
+      words[counter].volume = volume;
+      if (stop == false) {
+        words[counter].play();
+      } else {
+        document.getElementById("play").style.display = "inline";
+        document.getElementById("stop").style.display = "none";
+        words[counter].stop();
+      };
   }
 
-  words.forEach(addType);
-
-  function playSnd() {
-  // play wavs
-    counter++;
-    if (counter == words.length) return;
-    words[counter].addEventListener('ended', playSnd);
-    words[counter].volume = volume;
-    words[counter].play();
+    playSnd();
   }
-
-  playSnd();
 }
 
 $( function() {
