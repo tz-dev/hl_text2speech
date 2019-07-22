@@ -14,6 +14,15 @@ function addWord(x) {
   $txt.val(textAreaTxt.substring(0, caretPos) + txtToAdd + textAreaTxt.substring(caretPos) );
 }
 
+function speakWord(x) {
+// speak word on right click
+  document.oncontextmenu = function() { return false; }
+  var word    = new Audio("snd/police/" + x + ".wav");
+  var volume  = document.getElementById("volume").value / 100;
+  word.volume = volume;
+  word.play();
+}
+
 function text2speech() {
 // process text
   var text      = document.getElementById("input").value;

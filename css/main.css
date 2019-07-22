@@ -118,7 +118,7 @@ legend {
   font-weight: bold;
   background: #E47A24;
   color: #9B321F;
-  cursor: help;
+  padding: 0;
 }
 
 textarea {
@@ -220,11 +220,13 @@ input[type=radio] {
 .tooltip {
   position: relative;
   display: inline-block;
+  padding: 10px;
+  cursor: help;
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 200px;
   padding: 5px;
   background-color: #403F2D;
   border: 3px solid #9B321F;
