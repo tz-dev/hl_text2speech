@@ -13,6 +13,60 @@
   </head>
   <body>
     <section id="main">
+      <div id="help"><a class="tooltip" onclick="showHelp();">?<span class="tooltiptext">Click to show help</span></a></div>
+      <div id="helpwindow" onclick="hideHelp();">
+        <h2>HELP (click this window to close)</h2>
+        <p class="warning">This is meant as a fun tool only and NOT for any commercial use at all!</p>
+        <h3>Speaker selection</h3>
+        <p>There is a total of six speakers to choose from.</p>
+        <h3>Volume Slider</h3>
+        <p>Adjust volume levels for speaker and single word preview.</p>
+        <h3>Dictionary</h3>
+        <p>You can quickjump to letters by clicking them in the navigation above.</p>
+        <h3>Single word preview</h3>
+        <p>You can preview every entry of the dictionary by right-clicking it.</p>
+        <h3>Autocomplete</h3>
+        <p>Features a dynamic suggestion box below the input area.</p>
+        <h3>Vocabulary</h3>
+        <p> Overview of speakers & their vocabulary:</p>
+        <table>
+          <tr>
+            <th>Speaker</th>
+            <th>Afiiliation</th>
+            <th>Words</th>
+          </tr>
+          <tr>
+            <td>B.M.A.S.</td>
+            <td>Black Mesa Announcement System</td>
+            <td>600+</td>
+          </tr>
+          <tr>
+            <td>H.E.V.</td>
+            <td>Hazardous EnVironment Suit</td>
+            <td>130+</td>
+          </tr>
+          <tr>
+            <td>Barney Calhoun</td>
+            <td>Security Guard</td>
+            <td>170+</td>
+          </tr>
+          <tr>
+            <td>Scientist</td>
+            <td>Black Mesa Science Team</td>
+            <td>250+</td>
+          </tr>
+          <tr>
+            <td>Military Police</td>
+            <td>United States armed forces</td>
+            <td>100+</td>
+          </tr>
+          <tr>
+            <td>Military Soldier</td>
+            <td>HECU</td>
+            <td>350+</td>
+          </tr>
+        </table>
+      </div>
       <img src="img/half_life.png" class="center" id="logo" alt="logo" style="width:700px"/>
       <h1>TEXT TO SPEECH</h1>
       <textarea id="input" cols="80" rows="10" autofocus style="background: #fff url(img/Soldier.png) no-repeat bottom right;"></textarea>

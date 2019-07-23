@@ -23,6 +23,65 @@ section#main {
   border-radius: 10px;
 }
 
+#help {
+  float: right;
+  margin: -13px -13px 0 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+#help a {
+  display: block;
+  padding: 5px 8px 3px 6px;
+  margin: 3px 3px 0 0;
+  border: 3px solid #9B321F;
+  border-right: none;
+  border-top: none;
+  border-top-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  background: #E47A24;
+  color: #9B321F;
+}
+
+#helpwindow {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  height: 75.8%;
+  background: rgba(0,0,0,0.95);
+  width: 49.2%;
+  min-width: 920px;
+  top: 5%;
+  left: 25%;
+  padding: 10px 10px 10px 25px;
+  margin-left: -7px;
+  border: 3px solid #9B321F;
+  border-radius: 10px;
+}
+
+#helpwindow h2 {
+  text-align: center;
+}
+
+.warning {
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+table {
+}
+
+table th {
+  font-weight: bold;
+  background: #9B321F;
+  padding: 3px;
+}
+
+table td {
+  padding: 2px 3px 0px 0;
+}
+
 #logo {
   margin-top: 25px;
   margin-bottom: 25px;

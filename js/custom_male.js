@@ -5,6 +5,14 @@ function stop2speak() {
   location.reload();
 }
 
+function showHelp() {
+  document.getElementById("helpwindow").style.display = "inline"; 
+}
+
+function hideHelp() {
+  document.getElementById("helpwindow").style.display = "none"; 
+}
+
 function addWord(x) {
 // add words from dictionary at cursor position
   var $txt = jQuery("#input");
@@ -36,10 +44,8 @@ function text2speech() {
   var words     = text.split(' ');
   var volume    = document.getElementById("volume").value / 100;
   var counter   = -1;
-  var empty     = true;
 
   if (words[0].length > 0) {
-
     function addType(item, index, arr) {
     // add path & type, create audio
       arr[index] = new Audio("snd/male/" + item + ".wav");

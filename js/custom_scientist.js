@@ -5,6 +5,14 @@ function stop2speak() {
   location.reload();
 }
 
+function showHelp() {
+  document.getElementById("helpwindow").style.display = "inline"; 
+}
+
+function hideHelp() {
+  document.getElementById("helpwindow").style.display = "none"; 
+}
+
 function addWord(x) {
 // add words from dictionary at cursor position
   var $txt = jQuery("#input");
