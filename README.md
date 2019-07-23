@@ -7,7 +7,8 @@ Tested in FF only.
 
 Features:
 - Autocomplete functionality
-- Vocabulary can be added to textarea by click
+- Vocabulary can be added to textarea by left-click
+- Vocabulary can be previewed by right-click
 - Volume Slider
 - Speaker selection (6)
 
