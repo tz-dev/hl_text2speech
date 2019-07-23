@@ -47,7 +47,7 @@ section#main {
   display: none;
   position: fixed;
   z-index: 999;
-  height: 75.8%;
+  min-height: 75.8%;
   background: rgba(0,0,0,0.95);
   width: 49.2%;
   min-width: 920px;
